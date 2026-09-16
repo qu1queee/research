@@ -2,13 +2,24 @@
 
 **Topic:** `yt-talks`  
 **Skill:** `yt-talks-summarizer`  
-**Mode:** manual  
-**Video:** {id}  
-**Title:**  
-**Channel / event:**  
-**Published:**  
-**Caption source:** YouTube captions ({lang}) | blocked  
-**Link:** https://www.youtube.com/watch?v={id}
+**Mode:** manual
+
+## Source (attribution)
+
+| Field | Value |
+|-------|--------|
+| **Watch URL** | https://www.youtube.com/watch?v={id} |
+| **Title** | |
+| **Channel / speaker** | |
+| **Published** | |
+| **Accessed** | {YYYY-MM-DD} |
+| **Purpose** | personal study / curriculum research |
+| **Caption source** | YouTube captions ({lang}) \| blocked |
+
+## Optional quotes (max 2, ≤15 words each)
+
+- “…”
+- (omit section if none needed)
 
 ## 1. Identify the talk
 
@@ -19,9 +30,11 @@
 
 ## 2. Core thesis
 
-{2–5 sentences.}
+{2–5 sentences, paraphrased.}
 
 ## 3. Technical concepts
+
+{≤15 rows.}
 
 | Concept | How the speaker uses it |
 |---------|-------------------------|
@@ -29,14 +42,11 @@
 
 ## 4. Reconstruct the system
 
-{Components, data flow, control flow, dependencies, interfaces, scaling boundaries, failure points — or **none in captions**.}
-
-```mermaid
-flowchart LR
-  placeholder[omit this diagram if no system]
-```
+{Paraphrase. Mermaid only if it helps; omit placeholder diagram if none.}
 
 ## 5. Engineering decisions
+
+{≤5 blocks.}
 
 **Decision:**  
 **Why:**  
@@ -44,21 +54,19 @@ flowchart LR
 **Trade-off:**  
 **Result:**
 
-{Repeat per decision. Or **none in captions**.}
-
 ## 6. Numbers
 
-{Only values spoken or shown in description. Never invent. Or **none in captions**.}
+{Spoken only. Or **none in captions**.}
 
 ## 7. Trade-offs
 
-- {X vs Y / bottleneck / downside — or **none in captions**.}
+-
 
 ## 8. Fact vs opinion
 
 | Statement (paraphrase) | Label |
 |------------------------|--------|
-| | observed result / measured result / architectural choice / speaker opinion / recommendation / hypothesis |
+| | observed / measured / architectural choice / speaker opinion / recommendation / hypothesis |
 
 ## 9. Context
 
@@ -69,8 +77,6 @@ flowchart LR
 - **Assumptions:**
 - **Constraints:**
 
-{**unknown** if not spoken.}
-
 ## 10. Generalizable lessons
 
 - **Broad:**
@@ -78,7 +84,7 @@ flowchart LR
 
 ## 11. Uncertainty
 
-- {ASR errors, missing slides, guesses not made}
+-
 
 ## 12. Actionable notes
 

@@ -21,15 +21,21 @@ What did this talk teach, as structured engineering notes (thesis, system, decis
 ## In scope
 
 - Captions + description for one public video.
-- The twelve sections in form.md. Empty section = **none in captions**, not invention.
+- Twelve sections in form.md; empty = **none in captions**, not invention.
+- Briefs saved to `briefs/` only when you ask to save or update a file.
 
 ## Out of scope
 
 - Overnight / playlist-wide runs.
-- Storing `.vtt`, `.srt`, or full captions.
-- Treating notes as a legal fair-use opinion.
+- Transcripts, slide dumps, video/thumbnail files in the repo.
+- Republishing notes as course material, blog posts, or training data without a separate decision.
+- Legal opinions on fair use.
+
+## IP hygiene (summary)
+
+Paraphrase, attribute (URL + accessed date), cap quotes (see skill). Notes are for **personal study / curriculum research**, not a replacement for watching.
 
 ## Success
 
-- One video, one brief matching form.md.
+- One video per run; attribution block complete.
 - Numbers only if spoken; uncertainty labeled.
