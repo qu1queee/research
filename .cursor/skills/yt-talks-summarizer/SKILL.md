@@ -2,8 +2,8 @@
 name: yt-talks-summarizer
 description: >-
   Manual-only. One YouTube video per run. Read captions and fill the yt-talks
-  twelve-section engineering notes form. Never commit a transcript. Use when
-  the user names yt-talks or a video/playlist URL for this topic.
+  twelve-section engineering notes form. Paraphrase; never commit a transcript.
+  Use when the user names yt-talks or a video/playlist URL for this topic.
 ---
 
 # Engineering notes from captions (yt-talks)
@@ -21,11 +21,24 @@ If they only paste a playlist, ask which video. Do not pick 100 talks.
 
 ## Source
 
-Use YouTube **captions** (and the description for title, speakers, date). You are not watching the slides. ASR will mangle names (`Qflow` → Kubeflow). Prefer description for proper nouns when captions disagree.
+Use YouTube **captions** (and the description for title, speakers, date). You are not watching the slides. ASR will mangle names. Prefer description for proper nouns when captions disagree.
 
-## Copyright hygiene (not legal advice)
+Do not transcribe on-screen slide text or long spoken passages verbatim.
 
-Do not write `.vtt`, `.srt`, or a full caption dump into the repo. Fill [form.md](../../../topics/yt-talks/form.md) with paraphrase and, if needed, quotes ≤25 words. This does **not** mean the notes are free of copyright risk.
+## IP / redistribution (not legal advice)
+
+Goal: **personal study notes about the talk**, not a substitute for the video.
+
+- Do not write `.vtt`, `.srt`, or a full caption dump into the repo.
+- **Paraphrase** in your own words; prefer third person (“the speaker argues…”).
+- **Quotes:** at most **2** per brief, each **≤15 words**, only for a named term or cited number; otherwise paraphrase.
+- Do not mirror the talk’s rhetorical order sentence-by-sentence.
+- **Caps:** concept table ≤15 rows; engineering decisions ≤5 unless the user asks for more.
+- Omit music/sponsor reads unless technically relevant.
+- If captions mention confidential or “don’t share” material, generalize or omit.
+- Do not download or store video files or thumbnails.
+
+**Save to git:** write `topics/yt-talks/briefs/` only when the user asks to save or update a brief; otherwise output in chat only.
 
 ## Cost
 
@@ -33,23 +46,23 @@ One ~25 min talk ≈ 4–7k caption tokens in + a long structured brief out. Sto
 
 ## Method (follow in order)
 
-Copy the user’s twelve steps. Skip a section only by writing **none in captions** — never invent.
+Copy the twelve steps. Skip a section only by writing **none in captions** — never invent.
 
 1. **Identify the talk** — problem, audience, domain, type (architecture / implementation / research / operations / product / experience report).
-2. **Core thesis** — 2–5 sentences: what they teach, what they solve, main conclusion.
-3. **Technical concepts** — technologies, algorithms, architectures, protocols, hardware, software, infra, terms; each in *the speaker’s* usage.
-4. **Reconstruct the system** — components, data/control flow, dependencies, interfaces, scaling boundaries, failure points. Mermaid when it helps.
-5. **Engineering decisions** — for each: Decision / Why / Alternatives / Trade-off / Result. Omit if none spoken.
-6. **Numbers** — GPU count/type/memory, throughput, latency, batch, model size, bandwidth, storage, utilization, cost, scale. **Never invent missing numbers.**
-7. **Trade-offs** — X better than Y when…; chose X because…; X fails when…; bottleneck…; downside…
-8. **Fact vs opinion** — label: observed, measured, architectural choice, speaker opinion, recommendation, hypothesis.
-9. **Context** — workload, scale, hardware, software version, assumptions, constraints.
-10. **Lessons** — split broadly applicable vs specific to their company/system.
-11. **Uncertainty** — mark caption gaps; do not silently guess; do not promote speculation to fact.
-12. **Actionable notes** — remember; investigate next; docs/tech to learn; design questions to ask.
+2. **Core thesis** — 2–5 sentences.
+3. **Technical concepts** — ≤15 rows; each in the speaker’s usage, paraphrased.
+4. **Reconstruct the system** — components, flows, boundaries; Mermaid when it helps.
+5. **Engineering decisions** — ≤5: Decision / Why / Alternatives / Trade-off / Result.
+6. **Numbers** — only if spoken; never invent.
+7. **Trade-offs**
+8. **Fact vs opinion** — label statements.
+9. **Context** — workload, scale, hardware, versions, assumptions, constraints.
+10. **Lessons** — broad vs environment-specific.
+11. **Uncertainty** — caption gaps, ASR; no silent guesses.
+12. **Actionable notes** — your takeaways (not a recap of the talk).
 
 ## Output
 
-Write `topics/yt-talks/briefs/YYYY-MM-DD.md` using [form.md](../../../topics/yt-talks/form.md). If that file exists, `YYYY-MM-DD-2.md`.
+Use [form.md](../../../topics/yt-talks/form.md). Path: `topics/yt-talks/briefs/YYYY-MM-DD.md` (or `-2.md` if exists). Fill **Source (attribution)** first.
 
-If captions cannot be fetched: one short brief with section 11 = blocked, empty other sections.
+If captions cannot be fetched: brief with section 11 = blocked; minimal other sections.
